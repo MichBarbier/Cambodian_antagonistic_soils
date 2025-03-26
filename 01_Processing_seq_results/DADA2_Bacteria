@@ -67,7 +67,7 @@ Seq_tab_analysis <- as.data.frame(t(Seq_tab_nochim))
 Seq_tab_analysis$ID <- rownames(Seq_tab_analysis)
 Taxa_2 <- as.data.frame(Taxa)
 Taxa_2$ID <- rownames(Taxa)
-Data_16S <- merge(Taxa_2, Seq_tab_analysis, by="ID")
+Data_16S <- merge(Taxa_2, Seq_tab_analysis, by = "ID")
 
 write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv")
 
