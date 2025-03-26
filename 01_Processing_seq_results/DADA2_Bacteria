@@ -1,6 +1,6 @@
 #########
 # This script allows to :
-# - process the sequencing results from the  16S sequencing
+# - process the sequencing results from the 16S sequencing
 # - obtain the rarefaction curves 
 # - filter the reads (delete reagent contamination, and keep the most seqeunced)
 #########
