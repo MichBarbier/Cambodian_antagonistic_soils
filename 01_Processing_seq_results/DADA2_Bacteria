@@ -6,7 +6,7 @@
 #########
 
 
-setwd(C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/01_Processing_seq_results")
+setwd("C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/01_Processing_seq_results")
 
 
 #### Packages ##############################
