@@ -87,7 +87,7 @@ p1 <- ggplot(Rarecurve_data_16S)+
   ylab("Number of ASVs")+
   theme_bw()
 
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction curves bacterial microbiota - unfiltered.pdf")
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction_curves_bacteria.pdf")
 
 
 #### Filtering ##############################
