@@ -14,7 +14,7 @@ library(vegan)
 
 #### Principal component analysis ##############################
 # Data et metadata
-Data_pca <- read.csv("C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/02_Data/01_Exp_data/Physico_chemical_parameters.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
+Data_pca <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Physico_chemical_parameters.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 # Scale the physico-chemical parameters
 Data_pca[,3:13] <- scale(Data_pca[,3:13]) # The two first columns are factors
