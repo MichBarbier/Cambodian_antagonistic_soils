@@ -50,5 +50,5 @@ p1 <- ggplot(PCA_scores_sites, aes(PC1,PC2))+
   theme_bw()+
   theme(axis.title.x = element_text(size = 11), axis.title.y = element_text(size = 11), axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10))
 
-ggsave(plot = p1, dpi = 1000, device = "svg", width = 8, height = 4, filename = "C:/[[YOUR PATH]]/Cambodian_antagonistic_soils/04_Results/Principal_component_analysis.svg")
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 8, height = 4, filename = "Cambodian_antagonistic_soils/04_Results/Principal_component_analysis.svg")
 # This figure was modified with Microsoft PowerPoint to remove multiple overlaps 
