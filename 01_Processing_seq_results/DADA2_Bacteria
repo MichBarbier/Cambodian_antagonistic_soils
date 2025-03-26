@@ -1,13 +1,25 @@
+#########
+# This script allows to :
+# - process the sequencing results from the  16S sequencing
+# - obtain the rarefaction curves 
+# - filter the reads (delete reagent contamination, and keep the most seqeunced)
+#########
+
+
 setwd(C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/01_Processing_seq_results")
 
-#### Packages ####
+
+#### Packages ##############################
+
 library(data.table)
 library(tidyverse)
 library(BiocManager)
 library(dada2)
 library(vegan)
 
-#### DADA2 #####
+
+#### DADA2 ##############################
+
 data_files <- "C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/01_Processing_seq_results/Sequence_16S"
 list.files(data_files)
 
@@ -58,3 +70,63 @@ Taxa_2$ID <- rownames(Taxa)
 Data_16S <- merge(Taxa_2, Seq_tab_analysis, by="ID")
 
 write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv")
+
+
+#### Rarefaction curves ##############################
+
+# Create the rarefaction curves, and gives the results as a table
+Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
+
+# Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
+Rarecurve_data_16S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_16S[,"Site"])
+
+# Plot the rarefaction curves
+p1 <- ggplot(Rarecurve_data_16S)+
+  geom_line(aes(x = Sample, y = Species, group = Site, color = Soil))+
+  xlab("Number of reads")+
+  ylab("Number of ASVs")+
+  theme_bw()
+
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction curves bacterial microbiota - unfiltered.pdf")
+
+
+#### Rarefaction curves ##############################
+
+# Remove the ASVs assigned to Archaea
+Archaea <- grep("Archaea", Data_16S[,"Kingdom"])
+Data_16S <- Data_16S[-Archaea,]
+
+# Remove the ASVs sequenced in the Control
+Ctrl <- grep("Ctrl", colnames(Data_16S))
+Conta <- grep("TRUE", apply(Data_16S[,Ctrl], 1, mean) > 0)
+Data_16S <- Data_16S[-Conta,-Ctrl]
+
+# Keep the ASVs sequenced at least 5 times are keep
+Filtre <- grep("FALSE", apply(Data_16S[,8:72], 1, sum) >= 5)
+Data_16S <- Data_16S[-Filtre,]
+
+rows <- c(1:nrow(Data_16S) # Give an ASVs number 
+rownames(Data_16S) <- rows
+
+# Correct the name of unassigned taxa 
+NA_Phyl <- grep("TRUE", is.na(Data_16S[,"Phylum"]))
+Data_16S[NA_Phyl,"Phylum"] <- paste0("Unidentified ", Data_16S[NA_Phyl,"Kingdom"])
+Data_16S[NA_Phyl,3:7] <- Data_16S[NA_Phyl,"Phylum"]
+
+NA_Class <- grep("TRUE", is.na(Data_16S[,"Class"]))
+Data_16S[NA_Class,"Class"] <- paste0("Unidentified ", Data_16S[NA_Class,"Phylum"])
+Data_16S[NA_Class,4:7] <- Data_16S[NA_Class,"Class"]
+
+NA_Ord <- grep("TRUE", is.na(Data_16S[,"Order"]))
+Data_16S[NA_Ord,"Order"] <- paste0("Unidentified ", Data_16S[NA_Ord,"Class"])
+Data_16S[NA_Ord,5:7] <- Data_16S[NA_Ord,"Order"]
+
+NA_Fam <- grep("TRUE", is.na(Data_16S[,"Family"]))
+Data_16S[NA_Fam,"Family"] <- paste0("Unidentified ", Data_16S[NA_Fam,"Order"])
+Data_16S[NA_Fam,6:7] <- Data_16S[NA_Fam,"Family"]
+
+NA_Gen <- grep("TRUE", is.na(Data_16S[,"Genus"]))
+Data_16S[NA_Gen,"Genus"] <- paste0("Unidentified ", Data_16S[NA_Gen,"Family"])
+Data_16S[NA_Gen,7] <- Data_16S[NA_Gen,"Genus"]
+
+write.csv(Data_16S, "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table.csv")
