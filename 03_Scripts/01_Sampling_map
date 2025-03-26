@@ -15,6 +15,7 @@ library(sf)
 #### Cambodian map ##############################
 
 # Contain .shp files of the Cambodian map and soil types according to Crocker 1962
+# .shp files need to be in a folder with .shx files 
 # Data obtained from : https://data.opendevelopmentmekong.net/en/dataset/distribution-soil-type-in-cambodia?type=dataset
 Soil_types <- st_read("C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/02_Data/01_Exp_data/Shp_files/Soil_types.shp")
 
