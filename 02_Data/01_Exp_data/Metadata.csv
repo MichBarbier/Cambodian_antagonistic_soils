@@ -1,0 +1,66 @@
+Samples;Location;Antagonism;Total Carbon;Total Nitrogen;Available Phosphorus;CEC;Exchange AI;pH;Clay;Silt;Sand
+Bat_1_1;Battambang;Low antagonism;1.48;0.12;31;12.5;0.36;4.32;6.1;42.11;51.76
+Bat_1_2;Battambang;Low antagonism;1.48;0.12;31;12.5;0.36;4.32;6.1;42.11;51.76
+Bat_1_3;Battambang;Low antagonism;1.48;0.12;31;12.5;0.36;4.32;6.1;42.11;51.76
+Bat_1_4;Battambang;Low antagonism;1.48;0.12;31;12.5;0.36;4.32;6.1;42.11;51.76
+Bat_1_5;Battambang;Low antagonism;1.48;0.12;31;12.5;0.36;4.32;6.1;42.11;51.76
+Bat_2_1;Battambang;Low antagonism;1.57;0.14;31;13;0.48;4.82;13.25;44.73;41.07
+Bat_2_2;Battambang;Low antagonism;1.57;0.14;31;13;0.48;4.82;13.25;44.73;41.07
+Bat_2_3;Battambang;Low antagonism;1.57;0.14;31;13;0.48;4.82;13.25;44.73;41.07
+Bat_2_4;Battambang;Low antagonism;1.57;0.14;31;13;0.48;4.82;13.25;44.73;41.07
+Bat_2_5;Battambang;Low antagonism;1.57;0.14;31;13;0.48;4.82;13.25;44.73;41.07
+Bat_3_1;Battambang;Low antagonism;1.6;0.14;28;18.6;0.48;5.43;22.85;41.78;35.35
+Bat_3_2;Battambang;Low antagonism;1.6;0.14;28;18.6;0.48;5.43;22.85;41.78;35.35
+Bat_3_3;Battambang;Low antagonism;1.6;0.14;28;18.6;0.48;5.43;22.85;41.78;35.35
+Bat_3_4;Battambang;Low antagonism;1.6;0.14;28;18.6;0.48;5.43;22.85;41.78;35.35
+Bat_3_5;Battambang;Low antagonism;1.6;0.14;28;18.6;0.48;5.43;22.85;41.78;35.35
+Rov_1_1;Rovieng;High antagonism;1.63;0.14;29;10.5;0.8;5.44;7.6;48.63;47.43
+Rov_1_2;Rovieng;High antagonism;1.63;0.14;29;10.5;0.8;5.44;7.6;48.63;47.43
+Rov_1_3;Rovieng;High antagonism;1.63;0.14;29;10.5;0.8;5.44;7.6;48.63;47.43
+Rov_1_4;Rovieng;High antagonism;1.63;0.14;29;10.5;0.8;5.44;7.6;48.63;47.43
+Rov_1_5;Rovieng;High antagonism;1.63;0.14;29;10.5;0.8;5.44;7.6;48.63;47.43
+Rov_2_1;Rovieng;Low antagonism;1.59;0.14;28;12;0.56;4.62;8.9;35.93;54.51
+Rov_2_2;Rovieng;Low antagonism;1.59;0.14;28;12;0.56;4.62;8.9;35.93;54.51
+Rov_2_3;Rovieng;Low antagonism;1.59;0.14;28;12;0.56;4.62;8.9;35.93;54.51
+Rov_2_4;Rovieng;Low antagonism;1.59;0.14;28;12;0.56;4.62;8.9;35.93;54.51
+Rov_2_5;Rovieng;Low antagonism;1.59;0.14;28;12;0.56;4.62;8.9;35.93;54.51
+Rov_3_1;Rovieng;Low antagonism;1.92;0.17;27;14.5;0.44;4.67;10.65;36.2;52.05
+Rov_3_2;Rovieng;Low antagonism;1.92;0.17;27;14.5;0.44;4.67;10.65;36.2;52.05
+Rov_3_3;Rovieng;Low antagonism;1.92;0.17;27;14.5;0.44;4.67;10.65;36.2;52.05
+Rov_3_4;Rovieng;Low antagonism;1.92;0.17;27;14.5;0.44;4.67;10.65;36.2;52.05
+Rov_3_5;Rovieng;Low antagonism;1.92;0.17;27;14.5;0.44;4.67;10.65;36.2;52.05
+Stu_1_1;Stung Chinit;High antagonism;1.39;0.12;32;9.3;0.72;4.41;4.75;22.97;72.87
+Stu_1_2;Stung Chinit;High antagonism;1.39;0.12;32;9.3;0.72;4.41;4.75;22.97;72.87
+Stu_1_3;Stung Chinit;High antagonism;1.39;0.12;32;9.3;0.72;4.41;4.75;22.97;72.87
+Stu_1_4;Stung Chinit;High antagonism;1.39;0.12;32;9.3;0.72;4.41;4.75;22.97;72.87
+Stu_1_5;Stung Chinit;High antagonism;1.39;0.12;32;9.3;0.72;4.41;4.75;22.97;72.87
+Stu_2_1;Stung Chinit;High antagonism;1.34;0.12;54;10.7;0.72;4.01;2.05;30.08;68.11
+Stu_2_2;Stung Chinit;High antagonism;1.34;0.12;54;10.7;0.72;4.01;2.05;30.08;68.11
+Stu_2_3;Stung Chinit;High antagonism;1.34;0.12;54;10.7;0.72;4.01;2.05;30.08;68.11
+Stu_2_4;Stung Chinit;High antagonism;1.34;0.12;54;10.7;0.72;4.01;2.05;30.08;68.11
+Stu_2_5;Stung Chinit;High antagonism;1.34;0.12;54;10.7;0.72;4.01;2.05;30.08;68.11
+Stu_3_1;Stung Chinit;High antagonism;1.87;0.17;46;11;0.64;4.02;5.4;37.83;56.07
+Stu_3_2;Stung Chinit;High antagonism;1.87;0.17;46;11;0.64;4.02;5.4;37.83;56.07
+Stu_3_3;Stung Chinit;High antagonism;1.87;0.17;46;11;0.64;4.02;5.4;37.83;56.07
+Stu_3_4;Stung Chinit;High antagonism;1.87;0.17;46;11;0.64;4.02;5.4;37.83;56.07
+Stu_3_5;Stung Chinit;High antagonism;1.87;0.17;46;11;0.64;4.02;5.4;37.83;56.07
+Stu_4_1;Stung Chinit;High antagonism;2.2;0.19;52;11.5;0.48;4.13;2.95;20.51;75.92
+Stu_4_2;Stung Chinit;High antagonism;2.2;0.19;52;11.5;0.48;4.13;2.95;20.51;75.92
+Stu_4_3;Stung Chinit;High antagonism;2.2;0.19;52;11.5;0.48;4.13;2.95;20.51;75.92
+Stu_4_4;Stung Chinit;High antagonism;2.2;0.19;52;11.5;0.48;4.13;2.95;20.51;75.92
+Stu_4_5;Stung Chinit;High antagonism;2.2;0.19;52;11.5;0.48;4.13;2.95;20.51;75.92
+Stu_5_1;Stung Chinit;High antagonism;2.44;0.2;40;13;0.56;4.22;2.2;19.29;55.07
+Stu_5_2;Stung Chinit;High antagonism;2.44;0.2;40;13;0.56;4.22;2.2;19.29;55.07
+Stu_5_3;Stung Chinit;High antagonism;2.44;0.2;40;13;0.56;4.22;2.2;19.29;55.07
+Stu_5_4;Stung Chinit;High antagonism;2.44;0.2;40;13;0.56;4.22;2.2;19.29;55.07
+Stu_5_5;Stung Chinit;High antagonism;2.44;0.2;40;13;0.56;4.22;2.2;19.29;55.07
+Stu_6_1;Stung Chinit;High antagonism;1.86;0.17;53;9.5;0.52;4.36;2.1;29.19;68.36
+Stu_6_2;Stung Chinit;High antagonism;1.86;0.17;53;9.5;0.52;4.36;2.1;29.19;68.36
+Stu_6_3;Stung Chinit;High antagonism;1.86;0.17;53;9.5;0.52;4.36;2.1;29.19;68.36
+Stu_6_4;Stung Chinit;High antagonism;1.86;0.17;53;9.5;0.52;4.36;2.1;29.19;68.36
+Stu_6_5;Stung Chinit;High antagonism;1.86;0.17;53;9.5;0.52;4.36;2.1;29.19;68.36
+Stu_7_1;Stung Chinit;High antagonism;1.78;0.17;40;10.5;0.48;4.39;3.35;38.4;58.73
+Stu_7_2;Stung Chinit;High antagonism;1.78;0.17;40;10.5;0.48;4.39;3.35;38.4;58.73
+Stu_7_3;Stung Chinit;High antagonism;1.78;0.17;40;10.5;0.48;4.39;3.35;38.4;58.73
+Stu_7_4;Stung Chinit;High antagonism;1.78;0.17;40;10.5;0.48;4.39;3.35;38.4;58.73
+Stu_7_5;Stung Chinit;High antagonism;1.78;0.17;40;10.5;0.48;4.39;3.35;38.4;58.73

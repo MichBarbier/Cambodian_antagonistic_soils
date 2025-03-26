@@ -1,0 +1,35 @@
+;Kingdom;Phylum;Family;Bat_1;Bat_2;Bat_3;Rov_1;Rov_2;Rov_3;Stu_1;Stu_2;Stu_3;Stu_4;Stu_5;Stu_6;Stu_7
+1;Eukaryota;Nematoda;Alaimidae; 0; 0; 3; 0;10;15;44;48; 7; 8;14;31;55
+2;Eukaryota;Nematoda;Anguinidae_Ditylenchus;16;11;20; 2; 5;38; 6;32;21;62;21; 4;34
+3;Eukaryota;Nematoda;Aphelenchidae;77; 1;10; 0; 0; 8;19; 0; 0;16; 7; 4;62
+4;Eukaryota;Nematoda;Aphelenchoididae; 19; 20; 24; 17; 51; 61;  6;  8; 14;148; 71;  0;  7
+5;Eukaryota;Nematoda;Aporcelaimidae; 0; 0; 0; 0;20; 0;12; 0; 0;23; 0; 0;28
+6;Eukaryota;Nematoda;Bastianiidae;0;3;7;0;0;0;6;0;0;0;0;0;0
+7;Eukaryota;Nematoda;Bathyodontidae;0;0;0;0;0;8;0;0;0;0;0;0;0
+8;Eukaryota;Nematoda;Belondiridae;35;25;88;12;10;31; 6; 0; 7; 0; 0;13;14
+9;Eukaryota;Nematoda;Cephalobidae; 58; 30; 84; 27;174;244; 44; 95;753;523;609; 71;234
+10;Eukaryota;Nematoda;Criconematidae; 0; 0; 0; 0; 5; 0;31; 0; 0; 0; 0;22;34
+11;Eukaryota;Nematoda;Desmodoridae;0;0;3;0;0;0;0;0;0;0;0;0;0
+12;Eukaryota;Nematoda;Dorylaimidae;  0;  0;  0; 27; 10; 38;187; 71; 28; 23;  7; 53; 34
+13;Eukaryota;Nematoda;Ecphyadophoridae;0;1;0;0;0;0;0;0;0;0;0;0;0
+14;Eukaryota;Nematoda;Halaphanolaimidae; 0; 0; 0; 2; 0; 0;31; 0;28; 0; 0; 4; 0
+15;Eukaryota;Nematoda;Hoplolaimidae;0;0;3;0;0;0;0;0;0;0;7;0;0
+16;Eukaryota;Nematoda;Ironidae; 0; 0; 0; 0; 0; 0; 0;16; 0; 0; 0; 0; 0
+17;Eukaryota;Nematoda;Leptolaimidae;  0;  0;  0; 15;  0;  8;  0;230;  0;  0;  0; 40;  0
+18;Eukaryota;Nematoda;Leptonchidae; 19;  1; 41; 45; 82;321;293;333; 57;148;120;207; 21
+19;Eukaryota;Nematoda;Meloidogynidae; 0; 0; 7;10;26; 8;56;24; 7;16;21; 0;76
+20;Eukaryota;Nematoda;Monhysteridae;0;1;0;2;0;8;0;0;7;0;0;0;0
+21;Eukaryota;Nematoda;Neodiplogasteridae;0;0;0;0;0;8;0;0;7;0;0;0;0
+22;Eukaryota;Nematoda;Odontolaimidae; 0; 0; 0; 0; 0; 0;12; 0; 0; 0; 7; 0; 0
+23;Eukaryota;Nematoda;Ostellidae;0;2;0;0;0;0;0;0;0;0;0;0;0
+24;Eukaryota;Nematoda;Panagrolaimidae;10; 0; 0; 0; 0; 0; 0; 0; 0;23; 0; 0; 7
+25;Eukaryota;Nematoda;Plectidae;0;0;3;5;0;0;0;0;0;0;7;0;0
+26;Eukaryota;Nematoda;Pratylenchidae; 45; 47; 64; 10;107; 31;  6; 24;100;  8;  0; 22; 69
+27;Eukaryota;Nematoda;Prismatolaimidae; 0; 1; 0; 0; 0; 0;12; 0; 0; 0;35;26; 0
+28;Eukaryota;Nematoda;Psilenchidae;0;0;0;0;0;0;0;0;0;0;0;0;7
+29;Eukaryota;Nematoda;Qudsianematidae; 45; 16; 84; 17; 67; 61;119;103;  7; 16;127; 93;172
+30;Eukaryota;Nematoda;Rhabditidae;  0;  0;  0;  2;  0; 15;  6;  0; 14;678; 85;  0;  0
+31;Eukaryota;Nematoda;Rhabdolaimidae;  6; 21;101;  0;  0;  0;  6;  0;  0;  0;  0;  0;  0
+32;Eukaryota;Nematoda;Telotylenchidae; 39;  3;  3;  5;  5;  0; 62;159;  0;  0;  0;115;207
+33;Eukaryota;Nematoda;Tripylidae;0;0;7;0;0;0;0;0;0;0;0;0;0
+34;Eukaryota;Nematoda;Tylenchidae;252; 15; 54; 55;481;565;325;500;100;125;276;203;241
