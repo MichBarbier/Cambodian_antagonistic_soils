@@ -116,7 +116,8 @@ Data_16S <- Data_18S[-Conta,-Ctrl]
 Filtre <- grep("FALSE", apply(Data_18S[,8:72], 1, sum) >= 5)
 Data_18S <- Data_18S[-Filtre,]
 
-rows <- c(1:nrow(Data_18S)) # Assign a unique number to the ASVs
+# Assign a unique number to the ASVs
+rows <- c(1:nrow(Data_18S))
 rownames(Data_18S) <- rows
 
 # Correct the name of unassigned taxa 
