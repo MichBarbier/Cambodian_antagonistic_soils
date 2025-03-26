@@ -1,1 +1,20 @@
+########
+# This script allows to :
+# - find microbial taxa increasing with the antagonistic gradient with TITAN2 (Baker and King, 2010)
+# - measure the enrichment of the increasers in highly antagonistic soils with Metacoder (Foster et al., 2016)
+#########
 
+
+setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
+
+
+#### Packages ##############################
+
+library(data.table)
+library(hilldiv)
+library(metacoder)
+library(tidyverse)
+library(TITAN2)
+
+
+#### TITAN2 ##############################
