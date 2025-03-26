@@ -20,7 +20,7 @@ library(tidyverse)
 # Contain the filtered count tables and the nematode communities
 Bacteria <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
 Fungi <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Nematodes <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Nematode_communities.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Nematodes <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 #### Bacteria ####
 # Calculate various alpha diversity indices for bacterial microbiota
