@@ -7,4 +7,3 @@ The aims of the study were to identify rice field soils with antagonistic effect
 You will find in this repository the data and the scripts allowing to obtain the figures and the tables of the article. But first, you will need to download the raw sequencing data in the ENA database under the accession number PRJEB86942.
 
 
-
