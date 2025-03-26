@@ -74,7 +74,7 @@ write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables
 
 #### Rarefaction curves ##############################
 
-# Create the rarefaction curves, and gives the results as a table
+# Create the rarefaction curves, and give the results as a table
 Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
 
 # Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
