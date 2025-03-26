@@ -8,6 +8,7 @@ setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
 
 #### Packages ##############################
 
+library(ggrepel)
 library(tidyverse)
 library(vegan)
 
