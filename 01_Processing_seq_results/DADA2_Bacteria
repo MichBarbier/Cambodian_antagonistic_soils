@@ -60,7 +60,7 @@ Seq_tab <- Seq_tab[,nchar(colnames(Seq_tab)) %in% 384:430]
 Seq_tab_nochim <- removeBimeraDenovo(Seq_tab, method = "consensus", multithread = TRUE, verbose = TRUE)
 
 # Assign the taxonomy to the genus level
-Taxa <- assignTaxonomy(Seq_tab_nochim, "C:/Users/2022mb003/Desktop/Thèse/Articles/Article sols suppressifs/Résultats/Materials/Sequencing data/SILVA/silva_nr99_v138.1_train_set.fa.gz", tryRC = TRUE, multithread = TRUE)
+Taxa <- assignTaxonomy(Seq_tab_nochim, "C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils/01_Processing_seq_results/SILVA/silva_nr99_v138.1_train_set.fa.gz", tryRC = TRUE, multithread = TRUE)
 
 # Create the count table
 Seq_tab_analysis <- as.data.frame(t(Seq_tab_nochim))
