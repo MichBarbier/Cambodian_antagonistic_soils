@@ -10,6 +10,7 @@ setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
 
 #### Packages ##############################
 
+library(ggsignif)
 library(microeco)
 library(patchwork)
 library(tidyverse)
