@@ -90,7 +90,7 @@ p1 <- ggplot(Rarecurve_data_16S)+
 ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction curves bacterial microbiota - unfiltered.pdf")
 
 
-#### Rarefaction curves ##############################
+#### Filtering ##############################
 
 # Remove the ASVs assigned to Archaea
 Archaea <- grep("Archaea", Data_16S[,"Kingdom"])
