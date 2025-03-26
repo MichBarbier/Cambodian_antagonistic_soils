@@ -3,7 +3,7 @@
 #########
 
 
-setwd("C:/[[ YOUR PATH]]/Cambodian_antagonistic_soils")
+setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
 
 
 #### Packages ##############################
