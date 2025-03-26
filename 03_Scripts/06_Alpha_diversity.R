@@ -135,3 +135,22 @@ DEF"
 p10 <- p1 + p2 + p3 + p4 + p5 + p6 + plot_layout(design = Model, guides = "collect")
 
 ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S4.pdf")
+
+#### Statistic table #### 
+# Creation of the table containing the alpha diversity indices and statistics 
+Table_statistics <- as.data.frame(matrix(nrow = 3, ncol = 10))
+colnames(Table_statistics) <- c("Observed HAS mean", "Observed HAS sd", "Observed LAS mean", "Observed LAS sd", " Observed p-value", "Shannon HAS mean", "Shannon HAS sd", "Shannon LAS mean", "Shannon LAS sd", "Shannon p-value")
+rownames(Table_statistics) <- c("Bacteria", "Fungi", "Nematodes")
+
+# Results
+Table_statistics[1,] <- c(mean(Bacterial_alpha_diversity[grep("High", Bacterial_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Bacterial_alpha_diversity[grep("High", Bacterial_alpha_diversity[,"Antagonism"]),"Observed"]), mean(Bacterial_alpha_diversity[grep("Low", Bacterial_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Bacterial_alpha_diversity[grep("Low", Bacterial_alpha_diversity[,"Antagonism"]),"Observed"]), wilcox.test(Bacterial_alpha_diversity[,"Observed"]~Bacterial_alpha_diversity[,"Antagonism"])[["p.value"]], mean(Bacterial_alpha_diversity[grep("High", Bacterial_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Bacterial_alpha_diversity[grep("High", Bacterial_alpha_diversity[,"Antagonism"]),"Shannon"]), mean(Bacterial_alpha_diversity[grep("Low", Bacterial_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Bacterial_alpha_diversity[grep("Low", Bacterial_alpha_diversity[,"Antagonism"]),"Shannon"]), wilcox.test(Bacterial_alpha_diversity[,"Shannon"]~Bacterial_alpha_diversity[,"Antagonism"])[["p.value"]])
+Table_statistics[2,] <- c(mean(Fungal_alpha_diversity[grep("High", Fungal_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Fungal_alpha_diversity[grep("High", Fungal_alpha_diversity[,"Antagonism"]),"Observed"]), mean(Fungal_alpha_diversity[grep("Low", Fungal_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Fungal_alpha_diversity[grep("Low", Fungal_alpha_diversity[,"Antagonism"]),"Observed"]), wilcox.test(Fungal_alpha_diversity[,"Observed"]~Fungal_alpha_diversity[,"Antagonism"])[["p.value"]], mean(Fungal_alpha_diversity[grep("High", Fungal_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Fungal_alpha_diversity[grep("High", Fungal_alpha_diversity[,"Antagonism"]),"Shannon"]), mean(Fungal_alpha_diversity[grep("Low", Fungal_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Fungal_alpha_diversity[grep("Low", Fungal_alpha_diversity[,"Antagonism"]),"Shannon"]), wilcox.test(Fungal_alpha_diversity[,"Shannon"]~Fungal_alpha_diversity[,"Antagonism"])[["p.value"]])
+Table_statistics[3,] <- c(mean(Nematode_alpha_diversity[grep("High", Nematode_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Nematode_alpha_diversity[grep("High", Nematode_alpha_diversity[,"Antagonism"]),"Observed"]), mean(Nematode_alpha_diversity[grep("Low", Nematode_alpha_diversity[,"Antagonism"]),"Observed"]), sd(Nematode_alpha_diversity[grep("Low", Nematode_alpha_diversity[,"Antagonism"]),"Observed"]), wilcox.test(Nematode_alpha_diversity[,"Observed"]~Nematode_alpha_diversity[,"Antagonism"])[["p.value"]], mean(Nematode_alpha_diversity[grep("High", Nematode_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Nematode_alpha_diversity[grep("High", Nematode_alpha_diversity[,"Antagonism"]),"Shannon"]), mean(Nematode_alpha_diversity[grep("Low", Nematode_alpha_diversity[,"Antagonism"]),"Shannon"]), sd(Nematode_alpha_diversity[grep("Low", Nematode_alpha_diversity[,"Antagonism"]),"Shannon"]), wilcox.test(Nematode_alpha_diversity[,"Shannon"]~Nematode_alpha_diversity[,"Antagonism"])[["p.value"]])
+
+# Round the results
+Table_statistics <- round(Table_statistics, 5)
+Table_statistics[,1:4] <- round(Table_statistics[,1:4], 2)
+Table_statistics[,6:9] <- round(Table_statistics[,6:9], 2)
+
+write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Alhpa_diversity_results.csv")
+# Table was formated with with Microsoft Excel
