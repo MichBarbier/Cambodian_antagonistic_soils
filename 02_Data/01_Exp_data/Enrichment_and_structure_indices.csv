@@ -1,14 +1,14 @@
-Soils;Location;EI;SI
-Rov_1;Rovieng;30;41
-Rov_2;Rovieng;20;79
-Rov_3;Rovieng;35;84
-Stu_1;Stung Chinit;43;97
-Stu_3;Stung Chinit;13;39
-Stu_5;Stung Chinit;38;62
-Stu_2;Stung Chinit;10;86
-Stu_4;Stung Chinit;80;56
-Stu_7;Stung Chinit;7;93
-Stu_6;Stung Chinit;28;80
-Bat_2;Battambang;33;40
-Bat_1;Battambang;47;74
-Bat_3;Battambang;28;90
+Soils,Location,EI,SI
+Rov_1,Rovieng,30,41
+Rov_2,Rovieng,20,79
+Rov_3,Rovieng,35,84
+Stu_1,Stung Chinit,43,97
+Stu_3,Stung Chinit,13,39
+Stu_5,Stung Chinit,38,62
+Stu_2,Stung Chinit,10,86
+Stu_4,Stung Chinit,80,56
+Stu_7,Stung Chinit,7,93
+Stu_6,Stung Chinit,28,80
+Bat_2,Battambang,33,40
+Bat_1,Battambang,47,74
+Bat_3,Battambang,28,90
