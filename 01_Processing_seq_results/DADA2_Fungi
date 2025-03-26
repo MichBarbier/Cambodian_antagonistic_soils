@@ -141,4 +141,3 @@ Data_18S[NA_Gen,"Genus"] <- paste0("Unidentified ", Data_18S[NA_Gen,"Family"])
 Data_18S[NA_Gen,7] <- Data_18S[NA_Gen,"Genus"]
 
 write.csv(Data_18S, "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table.csv")
-  
