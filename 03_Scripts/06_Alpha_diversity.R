@@ -137,6 +137,8 @@ p10 <- p1 + p2 + p3 + p4 + p5 + p6 + plot_layout(design = Model, guides = "colle
 
 ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S4.pdf")
 
+## These results are presented in the Supplementary_Figure_S4
+
 #### Statistic table #### 
 # Creation of the table containing the alpha diversity indices and statistics 
 Table_statistics <- as.data.frame(matrix(nrow = 3, ncol = 10))
@@ -154,4 +156,5 @@ Table_statistics[,1:4] <- round(Table_statistics[,1:4], 2)
 Table_statistics[,6:9] <- round(Table_statistics[,6:9], 2)
 
 write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Alhpa_diversity_results.csv")
-# Table was formated with with Microsoft Excel
+
+## These results are presented in the Supplementary_Table_S2
