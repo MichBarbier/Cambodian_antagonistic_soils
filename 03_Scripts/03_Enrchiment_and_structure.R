@@ -37,3 +37,5 @@ p1 <- ggplot(Indices)+
   theme(axis.title.x = element_text(size = 11), axis.title.y = element_text(size = 11), axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10))
 
 ggsave(plot = p1, dpi = 1000, device = "pdf", width = 6, height = 4, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S2.pdf")
+
+## These results are presented in the Supplementary_Figure_S2
