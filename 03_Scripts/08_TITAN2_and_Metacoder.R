@@ -116,6 +116,10 @@ Stung_Chinit[,9] <- round(Stung_Chinit[,9], 2)
 
 write.csv(Stung_Chinit, file = "Cambodian_antagonistic_soils/04_Results/TITAN_Bacteria_stung_chinit.csv")
 
+## These results are presented in the Supplementary_Table_S6
+## The results tables for pure and reliable bacterial increasers at each site were merged using Microsoft Excel
+## A column was added and named "Antagonism against PPNs" where the bacterial taxa with known antagonistic activity to PPNs were identified 
+
 #### Fungi ####
 ## Standardization with the TSS method
 Fungi[,8:72] <- tss(Fungi[,8:72])
@@ -205,6 +209,10 @@ Stung_Chinit[,2:3] <- round(Stung_Chinit[,2:3], 2)
 Stung_Chinit[,9] <- round(Stung_Chinit[,9], 2)
 
 write.csv(Stung_Chinit, file = "Cambodian_antagonistic_soils/04_Results/TITAN_Fungi_stung_chinit.csv")
+
+## These results are presented in the Supplementary_Table_S7
+## The results tables for pure and reliable fungal increasers at each site were merged using Microsoft Excel
+## A column was added and named "Antagonism against PPNs" where the fungal taxa with known antagonistic activity to PPNs were identified 
 
 
 #### Metacoder ##############################
@@ -368,6 +376,9 @@ Result_table_bacteria[,12] <- round(Result_table_bacteria[,12], 6)
 
 write.csv(Result_table_bacteria, "Cambodian_antagonistic_soils/04_Results/TITAN_and_Metacoder_Bacteria.csv")
 
+## These results are presented in the Supplementary_Table_S4
+## A column was added and named "Antagonism against PPNs", with Microsoft Excel, where the bacterial taxa with known antagonistic activity to PPNs were identified 
+
 #### Fungi ####
 # Arrange TITAN2 results by change point value
 Fungi_titan <- Fungi_titan %>% arrange(-Fungi_titan[,"ienv.cp"], by.group = TRUE)
@@ -390,3 +401,6 @@ Result_table_fungi[,10:11] <- round(Result_table_fungi[,10:11], 4)
 Result_table_fungi[,12] <- round(Result_table_fungi[,12], 6)
 
 write.csv(Result_table_fungi, "Cambodian_antagonistic_soils/04_Results/TITAN_and_Metacoder_Fungi.csv")
+
+## These results are presented in the Supplementary_Table_S5
+## A column was added and named "Antagonism against PPNs", with Microsoft Excel, where the fungal taxa with known antagonistic activity to PPNs were identified 
