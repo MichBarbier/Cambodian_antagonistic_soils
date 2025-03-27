@@ -289,7 +289,10 @@ p3 <- ggplot(NMDS_scores_sites, aes(NMDS1,NMDS2))+
   theme(axis.title.y = element_text(size = 11), axis.text.y = element_text(size = 10), axis.title.x = element_text(size = 11), axis.text.x = element_text(size = 10))
 
 ggsave(plot = p3, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/NMDS_Nematodes.svg")
-# Modified with Microsoft PowerPoint due to overlaps
+# This figure was modified with Microsoft PowerPoint to remove multiple overlaps 
+
+## These results are presented in the Figure_3
+## The NMDS were asseembled and the overlaps were removed with Microsoft Powerpoint 
 
 # To create the statistic table 
 write.csv(Results_antagonism, file = "Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_nematodes.csv")
@@ -325,7 +328,8 @@ Table_statistics[,3:4] <- round(Table_statistics[,3:4], 4)
 Table_statistics[,5] <- round(Table_statistics[,5], 6)
 
 write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Permanova_results.csv")
-# Table was then formated with Microsoft Excel
+
+## These results are presented in the Table_2
 
 
 #### Satistic table - ORDISTEP Results ##############################
@@ -362,4 +366,5 @@ Table_statistics[,3:4] <- round(Table_statistics[,3:4], 4)
 Table_statistics[,5] <- round(Table_statistics[,5], 6)
 
 write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Ordistep_and_model_results.csv")
-# Table was then formated with Microsoft Excel
+
+## These results are presented in the Supplementary_Table_S3
