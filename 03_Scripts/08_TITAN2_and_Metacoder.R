@@ -227,7 +227,7 @@ Metadata <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Metadata.
 # If this is not done, metacoder cannot calculate the fold change because of the division by zero
 Bacteria[,8:72] <- Bacteria[,8:72] +1
 Bacteria[,8:72] <- tss(Bacteria[,8:72]) # Standardization
-Bacteria[,9:73] <- sweep(Bacteria[,8:72], 2, colSums(Bacteria[,8:72]), `/`) * 100 # Genus are now represented as percentage of the sample 
+Bacteria[,8:72] <- sweep(Bacteria[,8:72], 2, colSums(Bacteria[,8:72]), `/`) * 100 # Genus are now represented as percentage of the sample 
 
 ## Changes taxonomy names
 # Metacoder need the following taxonomy type = "k__...;p__...;c__... "
@@ -242,7 +242,7 @@ Bacteria[,"ID"] <- row.names(Bacteria)
 Bacteria <- Bacteria %>% unite(Taxonomy, 2:7, sep = ";", remove = FALSE) # Creates a column "Taxonomy"
 
 # Keep the taxonomy, the genus and the data
-Bacteria <- Bacteria[,c(2,8,9:74)]
+Bacteria <- Bacteria[,c(2,8:73)]
 
 ## Metacoder
 # Create a taxmap object
@@ -288,7 +288,7 @@ write.csv(Results, file = "Cambodian_antagonistic_soils/04_Results/Metacoder_Bac
 # If this is not done, metacoder cannot calculate the fold change because of the division by zero
 Fungi[,8:72] <- Fungi[,8:72] +1
 Fungi[,8:72] <- tss(Fungi[,8:72]) # Standardization
-Fungi[,9:73] <- sweep(Fungi[,8:72], 2, colSums(Fungi[,8:72]), `/`) * 100 # Genus are represented as percentage of the sample 
+Fungi[,8:72] <- sweep(Fungi[,8:72], 2, colSums(Fungi[,8:72]), `/`) * 100 # Genus are represented as percentage of the sample 
 
 ## Change taxonomy names
 # Metacoder need the following taxonomy type = "k__...;p__...;c__... "
@@ -303,7 +303,7 @@ Fungi[,"ID"] <- row.names(Fungi)
 Fungi <- Fungi %>% unite(Taxonomy, 2:7, sep = ";", remove = FALSE) # Creates a column "Taxonomy"
 
 # Keep the taxonomy, the genus and the data
-Fungi <- Fungi[,c(2,8,9:74)]
+Fungi <- Fungi[,c(2,8:73)]
 
 ## Metacoder
 # Creates a taxmap object
