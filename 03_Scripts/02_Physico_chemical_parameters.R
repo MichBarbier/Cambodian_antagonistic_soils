@@ -18,10 +18,10 @@ library(vegan)
 Data_pca <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Physico_chemical_parameters.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 # Scale the physico-chemical parameters
-Data_pca[,3:13] <- scale(Data_pca[,3:13]) # The two first columns are factors
+Data_pca[,3:14] <- scale(Data_pca[,3:14]) # The two first columns are factors
 
 # Makes the PCA
-PCA <- pca(Data_pca[,3:13])
+PCA <- pca(Data_pca[,3:14])
 
 PCA_scores <- scores(PCA)
 PCA_scores_sites <- as.data.frame(PCA_scores[["sites"]])
