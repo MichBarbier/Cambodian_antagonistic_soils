@@ -1,3 +1,8 @@
+#########
+# This script allows to plot the rarefaction curves from unfiltrated bacterial and fungal count tables
+# This script allows to plot the Supplementary_Figure_2
+#########
+
 write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv")
 
 #### Rarefaction curves ##############################
