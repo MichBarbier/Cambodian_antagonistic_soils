@@ -71,25 +71,6 @@ Data_16S <- merge(Taxa_2, Seq_tab_analysis, by = "ID")
 
 write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv")
 
-
-#### Rarefaction curves ##############################
-
-# Create the rarefaction curves, and give the results as a table
-Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
-
-# Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
-Rarecurve_data_16S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_16S[,"Site"])
-
-# Plot the rarefaction curves
-p1 <- ggplot(Rarecurve_data_16S)+
-  geom_line(aes(x = Sample, y = Species, group = Site, color = Soil))+
-  xlab("Number of reads")+
-  ylab("Number of ASVs")+
-  theme_bw()
-
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction_curves_bacteria.pdf")
-
-
 #### Filtering ##############################
 
 # Remove the ASVs assigned to Archaea
