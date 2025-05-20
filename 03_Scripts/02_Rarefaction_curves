@@ -3,13 +3,15 @@
 # This script allows to plot the Supplementary_Figure_2
 #########
 
-#### Libraries 
-library("patchwork")
-library("tidyverse")
-library("vegan")
-
 
 setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
+
+
+#### Packages ##############################
+
+library(patchwork)
+library(tidyverse)
+library(vegan)
 
 Data_16S <- read.csv("02_Data/02_Count_table/Bacterial_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
 
