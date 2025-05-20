@@ -3,26 +3,40 @@
 # This script allows to plot the Supplementary_Figure_2
 #########
 
-write.csv(Data_16S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv")
 
-#### Rarefaction curves ##############################
 
-# Create the rarefaction curves, and give the results as a table
-Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
+
+Data_16S <- read.csv("02_Data/02_Count_table/Bacterial_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
+
+#### Rarefaction curve
+# Creates the rarefaction curves, and gives the results in a table
+# Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
+Rarecurve_data_16S <- readRDS("Rarecurve_data_16S.rds")
 
 # Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
 Rarecurve_data_16S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_16S[,"Site"])
 
-# Plot the rarefaction curves
+Rarecurve_data_16S[,"Soil"] <- gsub("CtrlExtract", " Extraction kit control", Rarecurve_data_16S[,"Soil"])
+
+# Plots the rarefaction curves
 p1 <- ggplot(Rarecurve_data_16S)+
   geom_line(aes(x = Sample, y = Species, group = Site, color = Soil))+
   xlab("Number of reads")+
+  xlim(0,55000)+
   ylab("Number of ASVs")+
-  theme_bw()
+  scale_y_continuous(breaks = seq(0, 2500, 500))+
+  ggtitle("Bacterial microbiota")+
+  theme_bw()+
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.title.x = element_blank())
 
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction_curves_bacteria.pdf")
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Rarefaction curves bacterial microbiota - unfiltered.pdf")
 
-write.csv(Data_18S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table_unfiltered.csv")
+p1
+
+
+
+
+
 
 #### Rarefaction curves ##############################
 
