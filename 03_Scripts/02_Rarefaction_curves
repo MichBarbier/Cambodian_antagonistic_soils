@@ -3,19 +3,23 @@
 # This script allows to plot the Supplementary_Figure_2
 #########
 
+#### Libraries 
+library("patchwork")
+library("tidyverse")
+library("vegan")
 
 
+setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
 
 Data_16S <- read.csv("02_Data/02_Count_table/Bacterial_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
 
 #### Rarefaction curve
 # Creates the rarefaction curves, and gives the results in a table
-# Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
-Rarecurve_data_16S <- readRDS("Rarecurve_data_16S.rds")
+Rarecurve_data_16S <- rarecurve(t(Data_16S[,8:77]), tidy = TRUE)
 
 # Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
 Rarecurve_data_16S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_16S[,"Site"])
-
+# Change the name of the control 
 Rarecurve_data_16S[,"Soil"] <- gsub("CtrlExtract", " Extraction kit control", Rarecurve_data_16S[,"Soil"])
 
 # Plots the rarefaction curves
@@ -28,12 +32,38 @@ p1 <- ggplot(Rarecurve_data_16S)+
   ggtitle("Bacterial microbiota")+
   theme_bw()+
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.title.x = element_blank())
-
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Rarefaction curves bacterial microbiota - unfiltered.pdf")
-
 p1
 
+#### Data
+# Contains the unfiltered count table, obtained with DADA2
+Data_18S <- read.csv("Materials/Sequencing Data/Fungal count table - unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
 
+#### Rarefaction curve
+# Creates the rarefaction curves, and gives the results in a table
+#Rarecurve_data_18S <- rarecurve(t(Data_18S[,8:77]), tidy = TRUE)
+Rarecurve_data_18S <- readRDS("Rarecurve_data_18S.rds")
+
+# Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
+Rarecurve_data_18S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_18S[,"Site"])
+
+Rarecurve_data_18S[,"Soil"] <- gsub("CtrlExtract", " Extraction kit control", Rarecurve_data_18S[,"Soil"])
+
+# Plots the rarefaction curves
+p2 <- ggplot(Rarecurve_data_18S)+
+  geom_line(aes(x = Sample, y = Species, group = Site, color = Soil))+
+  xlab("Number of reads")+
+  xlim(0,55000)+
+  ggtitle("Fungal microbiota")+
+  ylab("Number of ASVs")+
+  theme_bw()
+p2
+
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Rarefaction curves fungal microbiota - unfiltered.pdf")
+
+p10 <- p1 / p2 + plot_layout(guides = "collect")
+p10
+
+ggsave(plot = p10, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Rarefaction curves - unfiltered.svg")
 
 
 
