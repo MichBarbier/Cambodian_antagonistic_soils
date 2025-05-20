@@ -73,24 +73,6 @@ Data_18S <- merge(Taxa_2, Seq_tab_analysis, by = "ID")
 write.csv(Data_18S, file = "Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table_unfiltered.csv")
 
 
-#### Rarefaction curves ##############################
-
-# Create the rarefaction curves, and give the results as a table
-Rarecurve_data_18S <- rarecurve(t(Data_18S[,8:77]), tidy = TRUE)
-
-# Create a “Soil” column, which will be used to color replicates of the same soil with the same colors
-Rarecurve_data_18S[,"Soil"] <- gsub("_[1-5]$", "", Rarecurve_data_18S[,"Site"])
-
-# Plot the rarefaction curves
-p1 <- ggplot(Rarecurve_data_18S)+
-  geom_line(aes(x = Sample, y = Species, group = Site, color = Soil))+
-  xlab("Number of reads")+
-  ylab("Number of ASVs")+
-  theme_bw()
-
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/03_Results/Rarefaction_curves_fungi.pdf")
-
-
 #### Filtering ##############################
 
 # Keep fungal ASVs according to Naranjo‐Ortizet al. 2022
