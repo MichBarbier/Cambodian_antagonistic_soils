@@ -17,10 +17,10 @@ library(sf)
 # Contain .shp files of the Cambodian map and soil types according to Crocker 1962
 # .shp files need to be in a folder with .shx files 
 # Data obtained from : https://data.opendevelopmentmekong.net/en/dataset/distribution-soil-type-in-cambodia?type=dataset
-Soil_types <- st_read("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Shp_files/Soil_types.shp")
+Soil_types <- st_read("02_Data/01_Exp_data/Shp_files/Soil_types.shp")
 
 # Contain the coordinates of the sampling sites
-Sampling_sites <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Coordinates_of_sampling_sites.csv.csv", dec = ".", sep = ",", header = TRUE)
+Sampling_sites <- read.csv("02_Data/01_Exp_data/Coordinates_of_sampling_sites.csv.csv", dec = ".", sep = ",", header = TRUE)
 
 # Vectors containing the soil type names and their colors for ggplot
 Soil_names_legend <- c("Mekong and Tonlé sap", "Acid lithosols", "Alluvial lithosols", "Alumisols", "Basic lithosols", "Brown alluvial soils", "Brown hydromorphic soils", "Coastal complex soils", "Cultural hydromorphic soils", "Grey hydromorphic soils", "Lacustrine alluvial soils", "Latosols", "Planosols", "Plinthite podzols", "Plinthitic hydromorphic soils", "Red-yellow podzols", "Regurs soils")
@@ -54,6 +54,6 @@ p1 <- ggplot()+
   theme_bw()+
   theme(legend.justification.right = "left", legend.key.width = unit(0.5, "cm"), legend.key.height = unit(0.1, "cm"))
 
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 8, height = 4, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S1.pdf")
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 8, height = 4, filename = "04_Results/Supplementary_Figure_S1.pdf")
 
 ## This map is presented in the Supplementary_Figure_S1
