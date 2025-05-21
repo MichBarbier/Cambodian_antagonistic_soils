@@ -12,13 +12,13 @@ The script :
 - 01_Sampling_map.R allows to obtain the Supplementary_Figure_S1
 - 02_Rarefaction_curves.R allows to obtain the Supplementary_Figure_S2
 - 03_Antagonism_2023.R allows to obtain the Figure_1
-- 04_Enrichment_and_structure.R allows to obtain the Supplementary_Figure_S3
+- 04_Antagonism_2024.R allows to obtain the Supplementary_Figure_S3
+- 05_Physico_chemical_parameters.R allows to obtain the Figure_2
+- 06_Enrichment_and_structure.R allows to obtain the Supplementary_Figure_S3
 
 ####
-- 02_Physico_chemical_parameters.R allows to obtain the Figure_1
 
 
-- 05_Antagonism_2024.R allows to obtain the Supplementary_Figure_S3
 - 06_Alpha_diversity.R allows to obtain the Supplementary_Figure_S4 and the Supplementary_Table_S2
 - 07_Beta_diversity.R allows to obtain the Figure_3, Table_2 and the Supplementary_Table_S3
 - 08_TITAN2_and_Metacoder.R allows to obtain the Figure_4, Figure_5, and the Supplementary_Table_S4 to Supplementary_Table_S7
