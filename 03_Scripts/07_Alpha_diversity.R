@@ -19,9 +19,9 @@ library(tidyverse)
 #### Alpha diversity ##############################
 
 # Contain the filtered count tables and the nematode communities
-Bacteria <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Fungi <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Nematodes <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
+Bacteria <- read.csv("02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Fungi <- read.csv("02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Nematodes <- read.csv("02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 #### Bacteria ####
 # Calculate various alpha diversity indices for bacterial microbiota
@@ -135,9 +135,9 @@ DEF"
 
 p10 <- p1 + p2 + p3 + p4 + p5 + p6 + plot_layout(design = Model, guides = "collect")
 
-ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S4.pdf")
+ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S5.pdf")
 
-## These results are presented in the Supplementary_Figure_S4
+## These results are presented in the Supplementary_Figure_S5
 
 #### Statistic table #### 
 # Creation of the table containing the alpha diversity indices and statistics 
@@ -155,6 +155,6 @@ Table_statistics <- round(Table_statistics, 5)
 Table_statistics[,1:4] <- round(Table_statistics[,1:4], 2)
 Table_statistics[,6:9] <- round(Table_statistics[,6:9], 2)
 
-write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Alhpa_diversity_results.csv")
+write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Supplementary_Table_S2.csv")
 
 ## These results are presented in the Supplementary_Table_S2
