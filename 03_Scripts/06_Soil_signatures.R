@@ -1,5 +1,6 @@
 #########
-# This script allows to plot a Principal Component Analysis of the sampled soils 
+# This script allows to plot the physico-chemical signatures
+# Boxplot for each parameter 
 #########
 
 
@@ -9,7 +10,8 @@ setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
 #### Packages ##############################
 
 library(ggsignif)
-library(
+library(ggrepel)
+library(patchwork)
 library(tidyverse)
 
 
@@ -191,4 +193,41 @@ p12
 p100 <- p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + plot_layout(guides = "collect")
 p100
 
-ggsave(plot = p100, dpi = 1000, device = "svg", width = 7.5, height = 6, filename = "04_Results/Physico_chemical_signatures.svg")
+ggsave(plot = p100, dpi = 1000, device = "svg", width = 7.5, height = 6, filename = "04_Results/Supplementary_Figure_S4a.svg")
+# Supplementary_Figure_S4a 
+
+##############################################################################################################"""
+#########
+# This script allows to plot the Enrichment index depending on the Structure index (Supplementary_Figure_3b)
+# These two indices are based on the nematode community (Ferris et al. 2001) 
+#########
+
+
+#### Data ##############################
+# Contain the enrichment index and the structure index values for each soil
+Indices <- read.csv("02_Data/01_Exp_data/Enrichment_and_structure_indices.csv", sep = ",", header = TRUE)
+
+#### Enrichment / Structure graph 
+## Vector containing the shapes for each location
+Shape <- c(15,16,17)
+Colors <- c("orangered", "lightskyblue")
+
+## Plot the graph
+p1 <- ggplot(Indices)+
+  geom_point(aes(x = SI, y = EI, shape = Location, color = Antagonism), size = 3)+
+  scale_color_manual("Antagonism", values = Colors, guide = "none")+
+  scale_shape_manual("Location", values = Shape, guide = "none")+
+  geom_text_repel(aes(label = Soils, x = SI, y = EI), size = 4)+
+  geom_vline(xintercept = 50, linetype = "dashed")+
+  geom_hline(yintercept = 50, linetype = "dashed")+
+  xlim(0,100)+
+  xlab("Structure index")+
+  ylim(0,100)+
+  ylab("Enrichment index")+
+  theme_bw()+
+  theme(axis.title.x = element_text(size = 11), axis.title.y = element_text(size = 11), axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10))
+p1
+
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 6, height = 4, filename = "04_Results/Supplementary_Figure_S4b.svg")
+
+## These results are presented in the Supplementary_Figure_S4b
