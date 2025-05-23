@@ -155,6 +155,6 @@ Table_statistics <- round(Table_statistics, 5)
 Table_statistics[,1:4] <- round(Table_statistics[,1:4], 2)
 Table_statistics[,6:9] <- round(Table_statistics[,6:9], 2)
 
-write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Supplementary_Table_S2.csv")
+write.csv(Table_statistics, file = "04_Results/Supplementary_Table_S2.csv")
 
 ## These results are presented in the Supplementary_Table_S2
