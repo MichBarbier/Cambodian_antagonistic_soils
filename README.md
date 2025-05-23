@@ -14,7 +14,7 @@ The script :
 - 03_Antagonism_2023.R allows to obtain the Figure_1
 - 04_Antagonism_2024.R allows to obtain the Supplementary_Figure_S3
 - 05_Physico_chemical_parameters.R allows to obtain the Figure_2
-- 06_Enrichment_and_structure.R allows to obtain the Supplementary_Figure_S3
+- 06_Soil_signatures.R allows to obtain the Supplementary_Figure_S4
 
 ####
 
