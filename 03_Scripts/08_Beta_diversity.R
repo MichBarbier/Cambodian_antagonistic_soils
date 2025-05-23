@@ -18,11 +18,11 @@ library(vegan)
 #### Beta diversity ##############################
 #### Data ####
 # Contains the filtered count tables and the nematode communities
-Bacteria <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Fungi <- read.csv("Cambodian_antagonistic_soils/02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Nematodes <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
+Bacteria <- read.csv("02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Fungi <- read.csv("02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Nematodes <- read.csv("02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 # Contain the samples information
-Metadata <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Metadata.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
 
 # Add a "Soils" column in the metadata
 Metadata[,"Soils"] <- rownames(Metadata)
@@ -111,14 +111,14 @@ p1 <- ggplot(NMDS_scores_sites, aes(NMDS1,NMDS2))+
   annotate("text", x = 0.25, y = 2.1, label = pvalue_permanova_location)+
   theme(axis.title.y = element_text(size = 11), axis.text.y = element_text(size = 10), axis.title.x = element_text(size = 11), axis.text.x = element_text(size = 10))
 
-ggsave(plot = p1, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/NMDS_Bacteria.svg")
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 12, height = 6, filename = "04_Results/Figure_3a.svg")
 # This figure was modified with Microsoft PowerPoint to remove multiple overlaps 
 
 # To create the statistic table 
-write.csv(Results_antagonism, file = "Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_bacteria.csv")
-write.csv(Results_location, file = "Cambodian_antagonistic_soils/04_Results/Permanova_location_bacteria.csv")
-write.csv(Ordistep_results, file = "Cambodian_antagonistic_soils/04_Results/Ordistep_results_bacteria.csv")
-write.csv(Results_model, file = "Cambodian_antagonistic_soils/04_Results/Permanova_model_bacteria.csv")
+write.csv(Results_antagonism, file = "4_Results/Permanova_antagonism_bacteria.csv")
+write.csv(Results_location, file = "04_Results/Permanova_location_bacteria.csv")
+write.csv(Ordistep_results, file = "04_Results/Ordistep_results_bacteria.csv")
+write.csv(Results_model, file = "04_Results/Permanova_model_bacteria.csv")
 
 #### Fungi ####
 # Data standardization with TSS method
@@ -199,14 +199,14 @@ p2 <- ggplot(NMDS_scores_sites, aes(NMDS1,NMDS2))+
   annotate("text", x = -0.5, y = -3, label = pvalue_permanova_location)+
   theme(axis.title.y = element_text(size = 11), axis.text.y = element_text(size = 10), axis.title.x = element_text(size = 11), axis.text.x = element_text(size = 10))
 
-ggsave(plot = p2, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/NMDS_Fungi.svg")
+ggsave(plot = p2, dpi = 1000, device = "svg", width = 12, height = 6, filename = "04_Results/Figure_3b.svg")
 # This figure was modified with Microsoft PowerPoint to remove multiple overlaps 
 
 # To create the statistic table 
-write.csv(Results_antagonism, file = "Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_fungi.csv")
-write.csv(Results_location, file = "Cambodian_antagonistic_soils/04_Results/Permanova_location_fungi.csv")
-write.csv(Ordistep_results, file = "Cambodian_antagonistic_soils/04_Results/Ordistep_results_fungi.csv")
-write.csv(Results_model, file = "Cambodian_antagonistic_soils/04_Results/Permanova_model_fungi.csv")
+write.csv(Results_antagonism, file = "04_Results/Permanova_antagonism_fungi.csv")
+write.csv(Results_location, file = "04_Results/Permanova_location_fungi.csv")
+write.csv(Ordistep_results, file = "04_Results/Ordistep_results_fungi.csv")
+write.csv(Results_model, file = "04_Results/Permanova_model_fungi.csv")
 
 #### Nematodes ####
 Metadata <- Metadata[-c(grep("_[2-5]$", rownames(Metadata))),] # Remove replicates from metabarcoding 
@@ -288,28 +288,28 @@ p3 <- ggplot(NMDS_scores_sites, aes(NMDS1,NMDS2))+
   annotate("text", x = -0.25, y = -1.25, label = pvalue_permanova_location)+
   theme(axis.title.y = element_text(size = 11), axis.text.y = element_text(size = 10), axis.title.x = element_text(size = 11), axis.text.x = element_text(size = 10))
 
-ggsave(plot = p3, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/NMDS_Nematodes.svg")
+ggsave(plot = p3, dpi = 1000, device = "svg", width = 12, height = 6, filename = "04_Results/Figure_3c.svg")
 # This figure was modified with Microsoft PowerPoint to remove multiple overlaps 
 
 ## These results are presented in the Figure_3
 ## The NMDS were asseembled and the overlaps were removed with Microsoft Powerpoint 
 
 # To create the statistic table 
-write.csv(Results_antagonism, file = "Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_nematodes.csv")
-write.csv(Results_location, file = "Cambodian_antagonistic_soils/04_Results/Permanova_location_nematodes.csv")
-write.csv(Ordistep_results, file = "Cambodian_antagonistic_soils/04_Results/Ordistep_results_nematodes.csv")
-write.csv(Results_model, file = "Cambodian_antagonistic_soils/04_Results/Permanova_model_nematodes.csv")
+write.csv(Results_antagonism, file = "04_Results/Permanova_antagonism_nematodes.csv")
+write.csv(Results_location, file = "04_Results/Permanova_location_nematodes.csv")
+write.csv(Ordistep_results, file = "04_Results/Ordistep_results_nematodes.csv")
+write.csv(Results_model, file = "04_Results/Permanova_model_nematodes.csv")
 
 
 #### Satistic table - PERMANOVA Results ##############################
 # Contains PERMANOVA results on the locations
-Bacteria_location <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_location_bacteria.csv", sep = ",", dec = ".", header = TRUE)
-Fungi_location <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_location_fungi.csv", sep = ",", dec = ".", header = TRUE)
-Nematodes_location <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_location_nematodes.csv", sep = ",", dec = ".", header = TRUE)
+Bacteria_location <- read.csv("04_Results/Permanova_location_bacteria.csv", sep = ",", dec = ".", header = TRUE)
+Fungi_location <- read.csv("04_Results/Permanova_location_fungi.csv", sep = ",", dec = ".", header = TRUE)
+Nematodes_location <- read.csv("04_Results/Permanova_location_nematodes.csv", sep = ",", dec = ".", header = TRUE)
 # Contains PERMANOVA results on the antagonistic activities
-Bacteria_antagonism <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_bacteria.csv", sep = ",", dec = ".", header = TRUE)
-Fungi_antagonism <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_fungi.csv", sep = ",", dec = ".", header = TRUE)
-Nematodes_antagonism <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_antagonism_nematodes.csv", sep = ",", dec = ".", header = TRUE)
+Bacteria_antagonism <- read.csv("04_Results/Permanova_antagonism_bacteria.csv", sep = ",", dec = ".", header = TRUE)
+Fungi_antagonism <- read.csv("04_Results/Permanova_antagonism_fungi.csv", sep = ",", dec = ".", header = TRUE)
+Nematodes_antagonism <- read.csv("04_Results/Permanova_antagonism_nematodes.csv", sep = ",", dec = ".", header = TRUE)
 
 # Create the statistic table
 Table_statistics <- as.data.frame(matrix(nrow = 6, ncol = 5))
@@ -327,20 +327,20 @@ Table_statistics[6,3:5] <- Nematodes_antagonism[1,4:6]
 Table_statistics[,3:4] <- round(Table_statistics[,3:4], 4)
 Table_statistics[,5] <- round(Table_statistics[,5], 6)
 
-write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Permanova_results.csv")
+write.csv(Table_statistics, file = "04_Results/Table_2.csv")
 
 ## These results are presented in the Table_2
 
 
 #### Satistic table - ORDISTEP Results ##############################
 # Contains PERMANOVA results on model determined with the Ordistep for the bacterial, fungal and nematodes communities
-Bacteria_model <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_model_bacteria.csv", sep = ",", dec = ".", header = TRUE)
-Fungi_model <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_model_fungi.csv", sep = ",", dec = ".", header = TRUE)
-Nematodes_model <- read.csv("Cambodian_antagonistic_soils/04_Results/Permanova_model_nematodes.csv", sep = ",", dec = ".", header = TRUE)
+Bacteria_model <- read.csv("04_Results/Permanova_model_bacteria.csv", sep = ",", dec = ".", header = TRUE)
+Fungi_model <- read.csv("04_Results/Permanova_model_fungi.csv", sep = ",", dec = ".", header = TRUE)
+Nematodes_model <- read.csv("04_Results/Permanova_model_nematodes.csv", sep = ",", dec = ".", header = TRUE)
 # Contains Ordistep results for the bacterial, fungal and nematodes communities
-Bacteria_ordistep <- read.csv("Cambodian_antagonistic_soils/04_Results/Ordistep_results_bacteria.csv", sep = ",", dec = ".", header = TRUE)
-Fungi_ordistep <- read.csv("Cambodian_antagonistic_soils/04_Results/Ordistep_results_fungi.csv", sep = ",", dec = ".", header = TRUE)
-Nematodes_ordistep <- read.csv("Cambodian_antagonistic_soils/04_Results/Ordistep_results_nematodes.csv", sep = ",", dec = ".", header = TRUE)
+Bacteria_ordistep <- read.csv("04_Results/Ordistep_results_bacteria.csv", sep = ",", dec = ".", header = TRUE)
+Fungi_ordistep <- read.csv("04_Results/Ordistep_results_fungi.csv", sep = ",", dec = ".", header = TRUE)
+Nematodes_ordistep <- read.csv("04_Results/Ordistep_results_nematodes.csv", sep = ",", dec = ".", header = TRUE)
 
 # Create the statistic table
 Table_statistics <- as.data.frame(matrix(nrow = 23, ncol = 5))
@@ -365,6 +365,6 @@ Table_statistics[22:23,4:5] <- Nematodes_ordistep[,4:5]
 Table_statistics[,3:4] <- round(Table_statistics[,3:4], 4)
 Table_statistics[,5] <- round(Table_statistics[,5], 6)
 
-write.csv(Table_statistics, file = "Cambodian_antagonistic_soils/04_Results/Ordistep_and_model_results.csv")
+write.csv(Table_statistics, file = "04_Results/Supplementary_Table_S3.csv")
 
 ## These results are presented in the Supplementary_Table_S3
