@@ -16,7 +16,7 @@ library(tidyverse)
 #### Antagonism ##############################
 
 # Contain the results of the antagonistic test of 2023 
-Antagonism_2023 <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Antagonism_2023.csv", sep = ",", dec = ".", header = TRUE)
+Antagonism_2023 <- read.csv("02_Data/01_Exp_data/Antagonism_2023.csv", sep = ",", dec = ".", header = TRUE)
 
 # Create a function to determine the statistical groups based on the p-values
 tri.to.squ <- function(x)
@@ -68,6 +68,6 @@ p1 <- ggplot(Antagonism_2023)+
   theme_bw()+
   theme(axis.text.x = element_text(color = Colors, size = 10), axis.text.y = element_text(size = 10), axis.title.y = element_text(size = 12))
 
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/Figure_2.pdf")
+ggsave(plot = p1, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "04_Results/Cambodian_antagonistic_soils/04_Results/Figure_2.pdf")
 
 ## These results are presented in the Figure_2
