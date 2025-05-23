@@ -16,7 +16,7 @@ library(tidyverse)
 
 #### Boxplots ##############################
 # Contains the number of nematodes from each trophic groups in the samples
-Trophic_groups <- read.csv("Cambodian_antagonistic_soils/02_Data/01_Exp_data/Nematodes_trophic_groups.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Trophic_groups <- read.csv("02_Data/01_Exp_data/Nematodes_trophic_groups.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
 
 # Create a column with the total number of nematodes in each sample
 Trophic_groups[,"Total"] <- apply(Trophic_groups[,1:4], 1, sum)
@@ -90,6 +90,6 @@ Model <- "ABCDE"
 
 p10 <- p1 + p2 + p3 + p4 + p5 + plot_layout(design = Model, guides = "collect")
 
-ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Cambodian_antagonistic_soils/04_Results/Supplementary_Figure_S5.pdf")
+ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S6.pdf")
 
-## These results are presented in the Supplementary_Figure_S5
+## These results are presented in the Supplementary_Figure_S6
