@@ -1,15 +1,30 @@
+#########
+# This script allows to plot the boxplot of the antagonism activity in 2024 in Bat_3 and Stu_3 soils
+# Antognism : percentage of mobility inhibition 
+#########
+
+
+setwd("C:/[[YOUR PATH]]/Cambodian_antagonistic_soils")
+
+
+#### Packages ##############################
+
+library(ggsignif)
+library(patchwork)
+library(tidyverse)
+
 
 #### Results 2024
 # Contains the result of the antagonism in 2024 for Bat_3 and Stu_3 in percentage of mobility 
-Antagonism_2024_ext <- read.csv("Results/Antagonistic effects/Antagonism 2024 extreme soils.csv", sep = ";", dec = ".", header = TRUE)
+Antagonism_2024 <- read.csv("02_Data/Antagonism_2024.csv", sep = ";", dec = ".", header = TRUE)
 
 # Splits data by location
-Antagonism_battambang <- Antagonism_2024_ext[grep("Bat", Antagonism_2024_ext[,1]),]
+Antagonism_battambang <- Antagonism_2024[grep("Bat", Antagonism_2024_ext[,1]),]
 Antagonism_battambang[,1] <- setnames(Antagonism_battambang, old = 1, new = "Suspension")
 Antagonism_battambang[,1] <- gsub("Bat_3$", "Unfiltered", Antagonism_battambang[,1])
 Antagonism_battambang[,1] <- gsub("Bat_3_Filtered$", "Filtered", Antagonism_battambang[,1])
 
-Antagonism_stung_chinit <- Antagonism_2024_ext[grep("Stu", Antagonism_2024_ext[,1]),]
+Antagonism_stung_chinit <- Antagonism_2024[grep("Stu", Antagonism_2024_ext[,1]),]
 Antagonism_stung_chinit[,1] <- setnames(Antagonism_stung_chinit, old = 1, new = "Suspension")
 Antagonism_stung_chinit[,1] <- gsub("Stu_3$", "Unfiltered", Antagonism_stung_chinit[,1])
 Antagonism_stung_chinit[,1] <- gsub("Stu_3_Filtered$", "Filtered", Antagonism_stung_chinit[,1])
@@ -59,4 +74,4 @@ p2
 
 p10 <- p1 + p2
 
-ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "Supplementary_Figure_S3.pdf")
+ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S3.pdf")
