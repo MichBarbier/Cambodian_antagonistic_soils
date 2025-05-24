@@ -211,8 +211,6 @@ Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ",", dec = ".", h
 
 #### Bacteria ####
 ## Standardization and percentage transformation
-# Add one "fake count" allowing to calculate fold change (HAS/LAS)
-# If this is not done, metacoder cannot calculate the fold change because of the division by zero
 Bacteria[,8:72] <- tss(Bacteria[,8:72]) # Standardization
 Bacteria[,8:72] <- sweep(Bacteria[,8:72], 2, colSums(Bacteria[,8:72]), `/`) * 100 # Genus are now represented as percentage of the sample 
 
@@ -271,8 +269,6 @@ write.csv(Results, file = "04_Results/Metacoder_Bacteria_HAS_vs_LAS.csv")
 
 #### Fungi ####
 ## Standardization and percentage transformation
-# Add one "fake count" allowing to calculate fold change
-# If this is not done, metacoder cannot calculate the fold change because of the division by zero
 Fungi[,8:72] <- tss(Fungi[,8:72]) # Standardization
 Fungi[,8:72] <- sweep(Fungi[,8:72], 2, colSums(Fungi[,8:72]), `/`) * 100 # Genus are represented as percentage of the sample 
 
