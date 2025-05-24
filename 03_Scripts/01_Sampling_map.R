@@ -54,6 +54,6 @@ p1 <- ggplot()+
   theme_bw()+
   theme(legend.justification.right = "left", legend.key.width = unit(0.5, "cm"), legend.key.height = unit(0.1, "cm"))
 
-ggsave(plot = p1, dpi = 1000, device = "pdf", width = 8, height = 4, filename = "04_Results/Supplementary_Figure_S1.pdf")
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 8, height = 4, filename = "04_Results/Supplementary_Figure_S1.svg")
 
 ## This map is presented in the Supplementary_Figure_S1
