@@ -1,1 +1,74 @@
 
+
+Bacteria <- read.csv("Results/Venn diagram/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Metadata <- read.csv("Results/Venn diagram/Metadata.csv", sep = ";", dec = ".", header = TRUE)
+Titan_all_sites <- read.csv("Results/Venn diagram/Result table titan bacteria all sites.csv", sep = ",", dec = ".", header = TRUE)
+
+Titan_all_sites <- setnames(Titan_all_sites, old = 1, new = "Genus")
+
+Bacteria <- right_join(Bacteria, Titan_all_sites, by = "Genus")
+
+Bacteria <- Bacteria[grep("2", Bacteria[,"filter"]),]
+
+Bacteria <- Bacteria[,-73:-88]
+
+#### Standardization and percentage transformation
+# Add one "fake count" allowing to calculate fold change
+# If this is not done, metacoder cannot calculate the fold change because of the division by zero
+#Bacteria[,8:72] <- Bacteria[,8:72] +1
+Bacteria[,8:72] <- tss(Bacteria[,8:72]) # Standardization
+Bacteria[,8:72] <- sweep(Bacteria[,8:72], 2, colSums(Bacteria[,8:72]), `/`) * 100 # Genus are represented as percentage of the sample 
+
+#### Changes taxonomy names
+# Metacoder need the following taxonomy type = "k__...;p__...;c__... "
+Bacteria[,"Kingdom"] <- gsub("^", "k__", Bacteria[,"Kingdom"])
+Bacteria[,"Phylum"] <- gsub("^", "p__", Bacteria[,"Phylum"])
+Bacteria[,"Class"] <- gsub("^", "c__", Bacteria[,"Class"])
+Bacteria[,"Order"] <- gsub("^", "o__", Bacteria[,"Order"])
+Bacteria[,"Family"] <- gsub("^", "f__", Bacteria[,"Family"])
+Bacteria[,"Genus"] <- gsub("^", "g__", Bacteria[,"Genus"])
+
+Bacteria[,"ID"] <- row.names(Bacteria)
+Bacteria <- Bacteria %>% unite(Taxonomy, 2:7, sep = ";", remove = FALSE) # Creates a column "Taxonomy"
+
+# Keeps the taxonomy, the genus and the data
+Bacteria <- Bacteria[,c(2,9:73)]
+
+#### Metacoder
+# Creates a taxmap object
+taxmap <- parse_tax_data(Bacteria, class_cols = "Taxonomy", class_sep = ";")
+
+# Add Metadata in the taxmap environment
+# Metacoder will use the first column value as “Treatment 1” to measure enrichment. When sorting metadata by antagonism, the first value is HAS, which  allows to calculate thefold change for each taxon by dividing the abundance in HAS by the abundance in LAS
+Metadata <- Metadata %>% arrange(Metadata$Antagonism, .by_group = TRUE)
+taxmap$data$Metadata <- Metadata
+
+# Calculates the abundances for each taxa
+taxmap$data$Abundance <- calc_taxon_abund(taxmap, "tax_data")
+
+# Calculates the mean abundances for each antagonistic group
+taxmap$data$Abundance_mean <- calc_group_mean(taxmap, "Abundance", cols = Metadata$Samples, groups = Metadata$Antagonism)
+
+# Calculates the difference between the two groups 
+taxmap$data$Difference_table <- compare_groups(taxmap, "Abundance", cols = Metadata$Samples, groups = Metadata$Antagonism)
+
+# Performes a Mann-Whitney test with a FDR adjustment of the p-value
+taxmap <- mutate_obs(taxmap, "Difference_table", wilcox_p_value = p.adjust(wilcox_p_value, method = "fdr"))
+
+p1 <- heat_tree(taxmap,
+          node_label = gsub("^[a-z]__", "", taxon_names),
+          node_size = n_obs,
+          node_label_size = 15,
+          edge_label_size = 15,
+          node_color = log2_median_ratio,
+          node_color_trans = "linear",
+          node_color_interval = c(0, 3),
+          edge_color_interval = c(0, 3),
+          node_color_range = c("lightgrey", "orange", "orangered"),
+          node_size_axis_label = "ASV count",
+          node_color_axis_label = "Log 2 ratio of median counts
+          (HAS / LAS)",
+          layout = "re", initial_layout = "re")
+p1
+
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Figure_4.svg")
