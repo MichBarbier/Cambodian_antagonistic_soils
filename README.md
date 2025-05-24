@@ -18,7 +18,7 @@ The script :
 - 07_Alpha_diversity.R allows to obtain the Supplementary_Figure_S5 and the Supplementary_Table_S2
 - 08_Beta_diversity.R allows to obtain the Figure_3, Table_2 and the Supplementary_Table_S3
 - 09_TITAN2_and_Metacoder.R allows to obtain the Figure_4, Figure_5, and the Supplementary_Table_S4 to Supplementary_Table_S7
-- 09_Heat_trees.R allows to obtain the Figure_4 and Figure_5
+- 10_Metacoder_heat_trees.R allows to obtain the Figure_4 and Figure_5
 - 11_Nematode_trophic_groups.R allow to obtain the Supplementary_Figure_S6
 
 Some figures have been modified with Microsoft PowerPoint to removes overlaps while some tables have been fomated with Microsoft Excel. 
