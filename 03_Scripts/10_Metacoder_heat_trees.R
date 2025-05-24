@@ -86,6 +86,7 @@ p1
 
 ggsave(plot = p1, dpi = 1000, device = "svg", width = 15, height = 15, filename = "Figure_4.svg")
 
+# These results are presented in the Figure_4
 ## This figure was modified with Microsoft PowerPoint to remove non-statistically enriched increasers from the heat tree
 ## This figure was modified with Microsoft PowerPoint to colore increasers sequenced in all HAS
 
@@ -213,6 +214,7 @@ p1
 
 ggsave(plot = p1, dpi = 1000, device = "svg", width = 12, height = 6, filename = "Figure_5.svg")
 
+# These results are presented in the Figure_5
 ## This figure was modified with Microsoft PowerPoint to remove non-statistically enriched increasers from the heat tree
 ## This figure was modified with Microsoft PowerPoint to colore increasers sequenced in all HAS
 
