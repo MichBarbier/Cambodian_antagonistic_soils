@@ -16,7 +16,7 @@ library(vegan)
 
 #### Bacterial rarefaction curves ##############################
 # Data
-Data_16S <- read.csv("02_Data/02_Count_table/Bacterial_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
+Data_16S <- read.csv("02_Data/02_Count_tables/Bacterial_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
 
 #### Rarefaction curve
 # Creates the rarefaction curves, and gives the results in a table
@@ -42,7 +42,7 @@ p1
 
 #### Fungal rarefaction curves ##############################
 # Data
-Data_18S <- read.csv("02_Data/02_Count_table/Fungal_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
+Data_18S <- read.csv("02_Data/02_Count_tables/Fungal_count_table_unfiltered.csv", sep = ";", header = TRUE, row.names = 1)
 
 #### Rarefaction curve
 # Creates the rarefaction curves, and gives the results in a table
