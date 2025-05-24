@@ -90,6 +90,6 @@ Model <- "ABCDE"
 
 p10 <- p1 + p2 + p3 + p4 + p5 + plot_layout(design = Model, guides = "collect")
 
-ggsave(plot = p10, dpi = 1000, device = "pdf", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S6.pdf")
+ggsave(plot = p10, dpi = 1000, device = "svg", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S6.svg")
 
 ## These results are presented in the Supplementary_Figure_S6
