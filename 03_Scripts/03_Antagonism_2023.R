@@ -68,6 +68,6 @@ p1 <- ggplot(Antagonism_2023)+
   theme_bw()+
   theme(axis.text.x = element_text(color = Colors, size = 10), axis.text.y = element_text(size = 10), axis.title.y = element_text(size = 12))
 
-ggsave(plot = p1, dpi = 1000, device = "svg", width = 9, height = 4.5, filename = "04_Results/Figure_2.svg")
+ggsave(plot = p1, dpi = 1000, device = "svg", width = 9, height = 4.5, filename = "04_Results/Figure_1.svg")
 
-## These results are presented in the Figure_2
+## These results are presented in the Figure_1
