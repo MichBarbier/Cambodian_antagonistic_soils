@@ -68,3 +68,5 @@ p2
 p10 <- p1 / p2 + plot_layout(guides = "collect")
 
 ggsave(plot = p10, dpi = 1000, device = "svg", width = 12, height = 6, filename = "04_Results/Supplementary_Figure_S2.svg")
+
+## Rarefaction curves are presented in the Supplementary_Figure_S2
