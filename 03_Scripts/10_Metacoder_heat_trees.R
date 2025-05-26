@@ -20,7 +20,7 @@ library(tidyverse)
 #### Bacteria ##############################
 #### Heat tree ####
 Bacteria <- read.csv("02_Data/02_Count_tables/Bacterial_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ";", dec = ".", header = TRUE)
+Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ",", dec = ".", header = TRUE)
 Titan_all_sites <- read.csv("04_Results/TITAN_Bacteria_all_sites.csv", sep = ",", dec = ".", header = TRUE)
 
 Titan_all_sites <- setnames(Titan_all_sites, old = 1, new = "Genus")
@@ -148,7 +148,7 @@ write.csv(Venn_Results, file = "04_Results/Venn_results_bacteria.csv")
 #### Heat tree ####
 ## Data
 Fungi <- read.csv("02_Data/02_Count_tables/Fungal_count_table.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
-Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv.csv", sep = ";", dec = ".", header = TRUE)
+Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv.csv", sep = ",", dec = ".", header = TRUE)
 Titan_all_sites <- read.csv("04_Results/TITAN_Fungi_all_sites.csv", sep = ",", dec = ".", header = TRUE)
 
 Titan_all_sites <- setnames(Titan_all_sites, old = 1, new = "Genus")
