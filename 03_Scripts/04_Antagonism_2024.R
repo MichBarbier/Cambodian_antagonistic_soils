@@ -16,7 +16,7 @@ library(tidyverse)
 
 #### Results 2024
 # Contains the result of the antagonism in 2024 for Bat_3 and Stu_3 in percentage of mobility 
-Antagonism_2024 <- read.csv("02_Data/Antagonism_2024.csv", sep = ";", dec = ".", header = TRUE)
+Antagonism_2024 <- read.csv("02_Data/Antagonism_2024.csv", sep = ",", dec = ".", header = TRUE)
 
 # Splits data by location
 Antagonism_battambang <- Antagonism_2024[grep("Bat", Antagonism_2024_ext[,1]),]
