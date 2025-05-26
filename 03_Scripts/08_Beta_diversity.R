@@ -22,7 +22,7 @@ Bacteria <- read.csv("02_Data/02_Count_tables/Bacterial_count_table.csv", sep = 
 Fungi <- read.csv("02_Data/02_Count_tables/Fungal_count_table.csv.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
 Nematodes <- read.csv("02_Data/01_Exp_data/Nematode_communities.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 # Contain the samples information
-Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Metadata <- read.csv("02_Data/01_Exp_data/Metadata.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 # Add a "Soils" column in the metadata
 Metadata[,"Soils"] <- rownames(Metadata)
