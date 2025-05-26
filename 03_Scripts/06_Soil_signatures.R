@@ -16,7 +16,7 @@ library(tidyverse)
 
 
 ## Data et metadata
-Data <- read.csv("02_Data/01_Exp_data/Physico_chemical_parameters.csv", sep = ";", dec = ".", header = TRUE, row.names = 1)
+Data <- read.csv("02_Data/01_Exp_data/Physico_chemical_parameters.csv", sep = ",", dec = ".", header = TRUE, row.names = 1)
 
 ## Layers for boxplot
 Colors <- c("orangered", "lightskyblue")
